@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by  () -->
+<project name="" default="all" basedir=".">
+
+	<property name="root.name" value="."/>
+
+	<property name="deployDir" value="${root.name}/deploy"/>	
+
+	<property name="deployProject" value="${root.name}/deploy/wx"/>
+	
+	<property name="deployLibDir" value="${deployProject}/lib"/>
+	
+	<!--<target name="init">-->
+		<!--<delete dir="${deployProject}"/>-->
+		<!--<mkdir dir="${deployProject}"/>-->
+
+		<!--<copy todir="${deployLibDir}">-->
+			<!--<fileset dir="${root.name}/project/web/WEB-INF/classes">-->
+			<!--</fileset>-->
+		<!--</copy>		-->
+	<!--</target>-->
+	
+	<!-- <target name="files">
+			<delete dir="${deployFiles}"/>
+			<mkdir dir="${deployFiles}"/>
+
+			<copy todir="${deployFiles}">
+				<fileset dir="${root.name}/files">
+				</fileset>
+			</copy>		
+	</target> -->
+
+	<target name="projectUser">
+				<copy todir="${deployProject}/project/WEB-INF/">
+
+					<fileset dir="./project/web/WEB-INF/">
+					</fileset>
+		
+				</copy>		
+
+				<mkdir dir="${deployProject}/project/WEB-INF/lib/"/>
+				<mkdir dir="${deployProject}/project/WEB-INF/classes/"/>
+				
+		</target>
+	
+	<target name="all" depends="projectUser"/>
+</project>
